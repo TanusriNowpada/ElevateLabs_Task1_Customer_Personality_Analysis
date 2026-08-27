@@ -1,93 +1,37 @@
-# Task 1 - Customer Personality Analysis: Data Cleaning & Preprocessing
+# Elevate Labs - Task 1: Data Cleaning and Preprocessing
 
-## 📌 Objective
+## Objective
 
-The objective of this task was to clean and preprocess a raw dataset using Python and Pandas.
+The objective of this task was to clean and preprocess a raw dataset using Python and Pandas. The goal was to identify and handle common data-quality issues and prepare the dataset for further analysis or modelling.
 
-The goal was to identify and fix common data-quality issues such as missing values, duplicate records, inconsistent values, incorrect data types, and formatting issues, making the dataset ready for further analysis.
+## Dataset
 
-## 📊 Dataset
-
-**Dataset:** Customer Personality Analysis
+Dataset: Customer Personality Analysis
 
 The dataset contains customer demographic information, purchasing behavior, product spending, and marketing campaign response data.
 
-- **Rows:** 2,240
-- **Columns:** 29
-- **Tool Used:** Python (Pandas)
+- Rows: 2,240
+- Columns: 29
+- Tool: Python (Pandas)
+- Environment: Jupyter Notebook
 
-## 🛠️ Tools & Technologies
+## Data Cleaning and Preprocessing
 
-- Python
-- Pandas
-- Jupyter Notebook
+The following cleaning and preprocessing steps were performed:
 
-## 🧹 Data Cleaning & Preprocessing
+1. Inspected the dataset structure, rows, columns, and data types.
+2. Identified missing values using Pandas.
+3. Filled missing values in the Income column using the median income.
+4. Checked for duplicate records; no duplicates were found.
+5. Identified unrealistic birth years and treated them as missing values.
+6. Identified the anomalous Income value 666666 and replaced it with the median income.
+7. Standardized inconsistent Marital_Status values such as Alone, Absurd, and YOLO into Other.
+8. Converted Dt_Customer from text to a proper datetime format.
+9. Standardized column names to lowercase with underscores.
+10. Performed final data-quality checks after cleaning.
 
-The following data-cleaning steps were performed:
+## Repository Structure
 
-### 1. Dataset Inspection
-- Checked the number of rows and columns.
-- Inspected column names and data types.
-- Reviewed the overall structure of the dataset.
-
-### 2. Missing Values
-- Identified missing values using `isnull()`.
-- Found missing values in the `Income` column.
-- Filled the missing income values using the median income.
-
-### 3. Duplicate Records
-- Checked for duplicate rows using `duplicated()`.
-- No duplicate records were found in the dataset.
-
-### 4. Invalid Birth Years
-- Identified unrealistic birth years such as 1893, 1899, and 1900.
-- Treated these invalid values as missing values for better data quality.
-
-### 5. Income Anomaly
-- Identified an unusual income value of `666666`.
-- Treated it as an anomalous value and replaced it with the median income.
-
-### 6. Standardizing Categorical Values
-Inconsistent marital-status values were identified:
-
-- `Alone`
-- `Absurd`
-- `YOLO`
-
-These values were grouped under:
-
-`Other`
-
-### 7. Date Formatting
-- Converted the `Dt_Customer` column from text to a proper datetime data type.
-- Used a consistent day-first date interpretation.
-
-### 8. Column Name Standardization
-Column names were standardized into a clean and uniform format:
-
-- Converted names to lowercase.
-- Removed unnecessary spaces.
-- Used underscores for readability.
-
-For example:
-
-`Year_Birth` → `year_birth`
-
-`Marital_Status` → `marital_status`
-
-`Dt_Customer` → `dt_customer`
-
-### 9. Final Data Quality Check
-After cleaning, the dataset was checked again for:
-- Missing values
-- Duplicate records
-- Data types
-- Overall dataset structure
-
-## 📁 Repository Structure
-
-```text
 ElevateLabs_Task1_Customer_Personality_Analysis/
 │
 ├── Data/
@@ -95,6 +39,46 @@ ElevateLabs_Task1_Customer_Personality_Analysis/
 │   └── customer_personality_cleaned.csv
 │
 ├── Notebook/
-│   └── Task1_Customer_Personality_Cleaning.ipynb
+│   └── Task1_Data_Cleaning.ipynb
 │
 └── README.md
+
+## Files
+
+- customer_personality_raw.csv - Original raw dataset.
+- customer_personality_cleaned.csv - Cleaned and preprocessed dataset.
+- Task1_Data_Cleaning.ipynb - Jupyter Notebook containing the complete cleaning process.
+- README.md - Project documentation and summary of preprocessing steps.
+
+## Final Result
+
+The Customer Personality Analysis dataset was successfully cleaned and preprocessed.
+
+Final dataset:
+- 2,240 records
+- 29 columns
+
+The cleaned dataset is ready for further analysis or modelling.
+
+## Key Learning
+
+This task provided practical experience in:
+
+- Handling missing values
+- Detecting duplicate records
+- Handling invalid and anomalous data
+- Standardizing categorical values
+- Converting dates to datetime
+- Checking data types
+- Standardizing column names
+- Performing data-quality validation using Pandas
+
+## Technologies Used
+
+Python | Pandas | Jupyter Notebook
+
+## Status
+
+Completed
+
+This task was completed as part of the Elevate Labs Data Analytics Internship.
